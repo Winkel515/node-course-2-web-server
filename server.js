@@ -18,9 +18,9 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-})
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+// })
 
 //Partials are fragments of an HTML code
 hbs.registerPartials(__dirname + '/views/partials');
