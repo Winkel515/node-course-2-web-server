@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 //Partials are fragments of an HTML code
 hbs.registerPartials(__dirname + '/views/partials');
 
-app.set('view engine', 'hbs');
+app.set('view engine', 'hbs'); //tells express() that we're reading hbs files when doing res.render
 
 //Helpers are values that you can inject into HTML code to make a dynamic website
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
@@ -48,6 +48,12 @@ app.get('/about', (req, res) => {
 app.get('/bad', (req, res) => {
     res.send({
         errorMessage: 'ERROR!'
+    })
+})
+
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'Project Page'
     })
 })
 
